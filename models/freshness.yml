@@ -12,11 +12,19 @@ sources:
 
     tables:
       - name: raw_orders
+        # freshness: null     
         description: "This seed is refreshed every day."
         columns:
           - name: id 
           - name: user_id
           - name: order_date
           - name: status
+    # tables:
+    #   - name: raw_customers
+    #     description: "This seed is refreshed every day."
+    #     columns:
+    #       - name: id 
+    #       - name: first_name
+    #       - name: last_name
 
            

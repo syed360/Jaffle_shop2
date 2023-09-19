@@ -28,4 +28,38 @@ models:
         tests:
           - accepted_values:
               values:  ['coupon', 'bank_transfer', 'gift_card', 'credit_card'] 
+
+sources:
+  - name: snowflake_sample_datas
+    description: 'A sample database'
+    database : snowflake_sample_data
+    schema : TPCDS_SF10TCL
+    tables :
+      - name : store_sales
+        description : 'details about sales in the store'
+  - name: artist_source
+    description: 'An artist database'
+    database : DEMO_DB
+    schema : staging
+    tables :
+      - name : artist_data
+        description : 'details about artist_data'
+  
+  - name: orders_source
+    description: 'Source to keep track of orders table'
+    database: DEMO_DB
+    schema: public
+    tables: 
+      - name: order_details 
+        description: 'Details about order made'
+
+  - name: aurtist_source
+    description: 'source to keep track of the seeds data'
+    database: demo_db
+    schema: public 
+    tables:
+      - name: order_artist
+        description: 'Details about the artist seeds datas'
+
+    
     
