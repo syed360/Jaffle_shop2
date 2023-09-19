@@ -1,0 +1,31 @@
+
+version: 2
+
+models:
+  - name: Customer_details
+    description: '{{ doc("Customer_details") }}'
+    columns:
+      - name: full_name
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: '{{ doc("stg_orders") }}'
+    columns:
+      - name: status
+        description: "Status of the order shipment"
+        tests:
+          - accepted_values:
+              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+  - name: stg_payments
+    description: '{{ doc("stg_payments") }}'
+    columns:
+      - name: payment_method
+        description: "Venue by how the payments are done"
+        tests:
+          - accepted_values:
+              values:  ['coupon', 'bank_transfer', 'gift_card', 'credit_card'] 
+    

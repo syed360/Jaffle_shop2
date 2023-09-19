@@ -1,0 +1,19 @@
+version: 2
+
+exposures:
+
+  - name: jaffle_metrics
+    label: Jaffles Dashboard
+    type: dashboard
+    maturity: high
+    description: >
+      Its an illusion, you dont exist.
+
+    depends_on:
+      - ref('stg_customers')
+      - ref('stg_orders')
+      - ref('stg_payments')
+
+    owner:
+      name: SyedALi
+      email: Mailme@gmail.com
