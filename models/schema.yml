@@ -52,14 +52,5 @@ sources:
     tables: 
       - name: order_details 
         description: 'Details about order made'
-
-  - name: aurtist_source
-    description: 'source to keep track of the seeds data'
-    database: demo_db
-    schema: public 
-    tables:
-      - name: order_artist
-        description: 'Details about the artist seeds datas'
-
     
     

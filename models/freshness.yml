@@ -6,13 +6,17 @@ sources:
     schema: public
 
     freshness:
-      warn_after: {count: 10, period: day }
+      warn_after: {count: 10, period: day}
       error_after: {count: 15, period: day}
     loaded_at_field: "TO_TIMESTAMP(order_date)"
 
     tables:
       - name: raw_orders
-        # freshness: null     
+        loaded_at_field: "TO_TIMESTAMP(order_date)"
+        freshness:
+          warn_after: {count: 4, period: day}
+          error_after: {count: 4, period: day}
+        # loaded_at_field: "TO_TIMESTAMP(order_date)"    
         description: "This seed is refreshed every day."
         columns:
           - name: id 

@@ -32,3 +32,5 @@ payments_details as(
     left join payments_data on order_details.order_id = payments_data.order_id
 )
 select * from payments_details
+
+
